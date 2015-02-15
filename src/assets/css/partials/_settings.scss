@@ -1,0 +1,172 @@
+/* ==============================
+   Colors
+   Desc: http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+   ============================== */
+
+
+// Colormap
+$colors: (
+
+  // Default Colors
+  'white':          #fff,
+  'black':          #000,
+  'gray':           #808080,
+  'lightgray':      #ccc,
+  'xlightgray':     #e5e5e5,
+  'lightdarkgray':  #666,
+  'darkgray':       #333,
+  'xdarkgray':      #1d1d1d,
+
+  // CI Colors
+  'red':          #df001b,
+);
+
+// Color Vars
+$_white:           map-get($colors, 'white');
+$_black:           map-get($colors, 'black');
+$_gray:            map-get($colors, 'gray');
+$_lightgray:       map-get($colors, 'lightgray');
+$_xlightgray:      map-get($colors, 'xlightgray');
+$_lightdarkgray:   map-get($colors, 'lightdarkgray');
+$_darkgray:        map-get($colors, 'darkgray');
+$_xdarkgray:       map-get($colors, 'xdarkgray');
+$_red:             map-get($colors, 'red');
+
+
+/* ==========================================================================
+
+   Box Shadows
+
+   ========================================================================== */
+
+$boxshadows: (
+
+  // Default Colors
+  'firstLevel':   (0 0 10px 0 rgba(0,0,0,.15)),
+  'secondLevel':  (0 0 15px 0 rgba(0,0,0,.1)),
+  'inputs':       (inset 0 1px 8px 0 rgba(0,0,0,0.2)),
+  'inputs--error':(inset 0 1px 8px 0 rgba(0,0,0,0.2), inset 0 0 0 2px $_red),
+  'layer':        (0 0 30px 0 rgba(0,0,0,.8)),
+  'tabs':         (0 -1px 8px 0 rgba(0,0,0,.1))
+);
+
+
+/* ==========================================================================
+
+   Borders
+
+   ========================================================================== */
+
+$borders: (
+
+  // Dotted Border
+  'dotted--xdarkgray':    1px dotted $_xdarkgray,
+  'dotted--white':        1px dotted $_white,
+  'dotted--gray':         1px dotted $_gray,
+  'dotted--lightgray':    1px dotted $_lightgray,
+
+  // Solid Borders
+  'solid--xdarkgray':     1px solid $_xdarkgray,
+  'solid--xdarkgray3':    3px solid $_xdarkgray,
+  'solid--xdarkgray10':   10px solid $_xdarkgray,
+  'solid--lightgray':     1px solid $_lightgray,
+  'solid--lightgray10':   10px solid $_lightgray,
+  'solid--xlightgray':    1px solid $_xlightgray,
+  'solid--lightdarkgray': 1px solid $_lightdarkgray,
+  'solid--white':         1px solid $_white,
+  'solid--red':           1px solid $_red,
+  'solid--gray':          1px solid $_gray,
+
+  // Solid Trans
+  'solid--trans':         1px solid transparent,
+);
+
+/* ==========================================================================
+
+   Fonts
+
+   ========================================================================== */
+
+$base_font_size: 13px;
+$em-base: $base_font_size; // For Bourbon rem/em calc
+
+$base_line_height: 1.3;
+
+// Font size set
+$fontSizes: (
+  'xsmall':     10px,
+  'small':      11px,
+  'base':       $base_font_size,
+  'medium':     18px,
+  'large':      27px,
+  'xlarge':     36px,
+  'xxlarge':    45px,
+);
+
+// Font family set
+$fonts: (
+  'hilti':              ('Hilti Roman', Arial, Verdana, sans-serif),
+  'hilti--headline':    ('Hilti Headline', Arial, Verdana, sans-serif),
+  'hilti--extended':    ('Hilti Ext', Arial, Verdana, sans-serif),
+);
+
+
+/* ==========================================================================
+
+   Breakpoint Settings / Direction
+
+   ========================================================================== */
+
+// Fix Breakpoints Sizes
+$breakpoints: (
+  'xsmall':     320px,
+  'small':      567px,
+  'medium':     767px,
+  'default':    1023px,
+  'large':      1259px,
+);
+
+$breakpoints-v: (
+  'small':      600px,
+  'normal':     800px,
+  'large':      1000px,
+);
+
+// horizontal
+$media-direction: max;
+
+// vertical
+$media-direction-v: max;
+
+
+/* ==========================================================================
+
+   Timings
+
+   ========================================================================== */
+
+$timings: (
+  'zero':     0,
+  'xfast':    100ms,
+  'fast':     250ms,
+  'medium':   500ms,
+  'slow':     1000ms,
+);
+
+
+/* ==========================================================================
+
+   Z-Index
+
+   ========================================================================== */
+
+$z-layers: (
+  'deep':     -9999,
+  'default':      1,
+  'low':         10,
+  'middle':     100,
+  'high':      1000,
+  'dropdown':  3000,
+  'overlay':   4000,
+  'modal':     4001,
+);

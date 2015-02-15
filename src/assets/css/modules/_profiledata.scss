@@ -1,0 +1,221 @@
+/* ==========================================================================
+
+   Profile Data
+
+   ========================================================================== */
+
+$fullWidthBreakpoint: 'medium';
+.profileData {
+  display: table;
+
+  //Global Styles
+  form {
+    float: none;
+    display: table-row;
+    vertical-align: bottom;
+    width: 100%;
+
+    fieldset {
+      position: relative;
+      padding-right: 16px;
+      border-right: border('dotted--xdarkgray');
+
+      @include breakpoint($fullWidthBreakpoint) {
+        border-right: none;
+        padding-right: 0;
+      }
+
+      //top right corner
+      &:before {
+        @include squareAngleCorner('top-right');
+
+        @include breakpoint($fullWidthBreakpoint) {
+          display: none;
+        }
+      }
+    }
+
+    .accountData,
+    .contactData,
+    .companyData,
+    .sideInfo {
+      vertical-align: bottom;
+      margin-bottom: 20px;
+    }
+
+    .accountData,
+    .contactData,
+    .companyData {
+
+      fieldset {
+        padding: 20px 16px 20px 0;
+
+        @include breakpoint($fullWidthBreakpoint) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .contactData,
+    .companyData,
+    .sideInfo {
+      @include col(6, no, no);
+      //@include clearfix;
+      position: relative;
+      float: none;
+
+      //breakpoints
+      @include breakpoint($fullWidthBreakpoint) {
+        @include col(12, no, no);
+      }
+    }
+  }
+
+
+  // Account Data Styles
+  .accountData {
+    @include col(12, no, no);
+    float: none;
+    display: table-row;
+
+    form {
+      float: left;
+      display: block;
+
+      fieldset {
+        @include col(6, no, no);
+        float: none;
+        border-color: $_white;
+
+        //breakpoints
+        @include breakpoint($fullWidthBreakpoint) {
+          @include col(12, no, no);
+        }
+
+        &:before,
+        .inputRow,
+        .inputRow input,
+        .inputRow .notification{
+          display: none;
+        }
+
+        .inputRow:first-child {
+            display: block;
+        }
+
+        .inputRow .notification{
+          clear: both;
+        }
+      }
+
+      .formOptions {
+        display: none;
+
+        .button {
+          position: static;
+        }
+      }
+
+      &.open {
+
+        .inputRow,
+        .inputRow input,
+        .inputRow .notification,
+        .formOptions {
+          display: block;
+        }
+
+        .noInput,
+        .change {
+          display: none;
+        }
+
+        .inputRow input + .notification {
+          display: inline-block;
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .noInput{
+      float: left;
+      width: 50%;
+      max-width: 840px;
+      margin-left: 8.33333333%;
+      padding: 10px 0;
+      font-weight: bold;
+
+      @include breakpoint('small') {
+        margin-left: 0;
+      }
+
+      & + a {
+        float: right;
+      }
+    }
+
+    .change {
+      display: inline-block;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  }
+
+
+  //Company Data Styles
+  .companyData{
+
+    &, & + aside{
+      display: inline-block;
+    }
+  }
+
+
+  //Side Info Styles
+  .sideInfo {
+
+    //bottom-left corner
+    &:before {
+      @include squareAngleCorner('bottom-left');
+
+      @include breakpoint($fullWidthBreakpoint) {
+        display: none
+      }
+    }
+
+    .notification {
+      margin-left: $gutter__width * 2.5;
+      margin-bottom: 0;
+
+      @include breakpoint($fullWidthBreakpoint) {
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+
+
+  //Form Option Styles
+  .formOptions {
+    @include col(12, no, no);
+    position: relative;
+
+    border-top: border('dotted--xdarkgray');
+    margin-left: 0;
+
+    .button {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @include breakpoint('small') {
+        position: static;
+        top: auto;
+        right: auto;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,362 @@
+/* ==========================================================================
+
+   siteHead
+
+   ========================================================================== */
+
+.siteHead {
+  color: color('white');
+  box-shadow: boxshadow('secondLevel');
+  position: relative;
+
+  &__branding {
+    @include col(7, no);
+    background: color('red');
+    height: 110px;
+
+    @include breakpoint('large') {
+      @include col(6, no);
+    }
+
+    @include breakpoint('default') {
+      @include col(12, no);
+      height: 90px;
+    }
+
+    @include breakpoint('medium') {
+      @include col(6, no);
+      height: 55px;
+    }
+  }
+
+  &__logo {
+    @include col(8, no);
+    padding: 15px 20px;
+
+    @include breakpoint('medium') {
+      padding: 15px 20px;
+    }
+
+    img {
+      max-width: 250px;
+
+      @include breakpoint('default') {
+        max-height: 25px;
+      }
+
+      @include breakpoint('medium') {
+        max-height: 15px;
+      }
+    }
+  }
+
+  &__langSwitch {
+    @include col(4, no);
+    padding: 10px 15px;
+
+    @include breakpoint('medium') {
+      display: none;
+    }
+
+    li {
+      float: right;
+    }
+
+    a {
+      display: inline-block;
+      font-weight: 700;
+      padding: 5px;
+      margin: 5px 5px 0 0;
+      color: color('white');
+      transition: all ms('medium');
+
+      &:hover {
+        background: color('white');
+      }
+
+      &.isActive,
+      &.isActive:hover {
+        background: color('white');
+        color: darken(color('red'), 10%);
+      }
+    }
+  }
+
+  &__userAction {
+    @include col(5, no);
+
+    @include breakpoint('large') {
+      @include col(6, no);
+    }
+
+    @include breakpoint('default') {
+      @include col(12, no);
+    }
+
+    @include breakpoint('medium') {
+      @include col(6, no);
+      height: 55px;
+    }
+  }
+
+  &__site {
+    @include col(12, no);
+    padding: 9px 0 9px 100px;
+    height: 55px;
+    background: color('white');
+    position: relative;
+
+    @include breakpoint('default') {
+      @include col(8, no);
+      padding: 9px 0 9px 100px;
+    }
+
+    @include breakpoint('medium') {
+      display: none;
+    }
+
+    body.loggedIn & {
+      padding: 9px 80px 9px 100px;
+    }
+
+    .icon {
+      font-size: 32px;
+      display: inline-block;
+      position: relative;
+      top: -5px;
+
+      @include breakpoint('default') {
+        top: 2px;
+      }
+    }
+  }
+
+  &__contact,
+  &__logout {
+    text-align: center;
+    color: color('xdarkgray');
+    font-size: fontSize('small');
+    font-weight: bold;
+    height: 37px;
+    width: 80px;
+    padding: 0 20px;
+    position: absolute;
+
+    span {
+      display: inline-block;
+      position: relative;
+      top: -17px;
+      width: 100%;
+
+      @include breakpoint('default') {
+        display: none;
+      }
+    }
+
+    &:hover {
+      color: color('xdarkgray');
+    }
+  }
+
+  &__contact {
+    border-right: border('dotted--xdarkgray');
+    left: 0;
+  }
+
+  &__logout {
+    border-left: border('dotted--xdarkgray');
+    right: 0;
+  }
+
+  &__search {
+    @include col(12, no);
+    padding-right: 80px;
+    position: relative;
+
+    button {
+      width: 80px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: center;
+      color: color('xdarkgray');
+      font-size: fontSize('small');
+      font-weight: bold;
+      cursor: pointer;
+
+      span {
+        display: inline-block;
+        position: relative;
+        top: -14px;
+        width: 100%;
+
+        @include breakpoint('default') {
+          display: none;
+        }
+      }
+    }
+
+  }
+
+  &__user {
+    padding: 9px 0;
+    @include col(12, no);
+    height: 55px;
+    background: color('black');
+
+    @include breakpoint('default') {
+      @include col(4, no);
+      padding: 0;
+    }
+
+    @include breakpoint('medium') {
+      @include col(12, no);
+    }
+
+    .icon {
+      line-height: 60px;
+      font-size: 32px;
+
+      @include breakpoint('small') {
+        font-size: 27px;
+      }
+
+      @include breakpoint('xsmall') {
+        font-size: 22px;
+      }
+
+      &.icon-arrowdown-full {
+        background: lighten(color('darkgray'), 10%);
+        color: color('white');
+        font-size: fontSize('medium');
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        line-height: 24px;
+        border-radius: 3px;
+        text-align: center;
+        top: 10px;
+      }
+    }
+  }
+
+
+  &__personalData,
+  &__loginRegister,
+  &__cart {
+    @include col(6);
+    height: 37px;
+    border-right: border('dotted--white');
+    color: color('white');
+    position: relative;
+    padding-right: 50px;
+    display: table;
+
+    span {
+      text-decoration: none;
+      transition: all ms('medium');
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: color('white');
+
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    > .icon {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      line-height: 46px;
+    }
+
+    @include breakpoint('default') {
+      display: none;
+    }
+  }
+
+  &__cart {
+    border: none;
+  }
+}
+
+/* ==========================================================================
+
+   breadcrumb
+
+   ========================================================================== */
+
+.siteHead__breadcrumb {
+  @include col(12);
+  background: color('white');
+  color: color('darkgray');
+  overflow: hidden;
+  height: 32px;
+  line-height: 32px;
+  font-size: fontSize('small');
+  font-weight: bold;
+  transition: all ms('medium') ms('fast');
+  box-shadow:
+    inset 0 -5px 0 color('white'),
+    inset 0 0 100px color('white'),
+    inset 0 3px 15px rgba(color('black'), .2);
+
+  @include breakpoint('medium') {
+    display: none;
+  }
+
+  a {
+    color: color('xdarkgray');
+
+    span {
+      border-bottom: border('solid--trans');
+      transition: all ms('medium');
+    }
+
+    > .icon {
+      font-size: 15px;
+      position: relative;
+      top: 3px;
+    }
+
+    &:hover {
+      color: color('xdarkgray');
+
+      span {
+        border-bottom: border('solid--xdarkgray');
+      }
+    }
+  }
+
+  .button {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 5px 0 0;
+    float: left;
+    font-size: fontSize('small');
+    margin: 5px 20px 0 0;
+    color: color('white');
+
+    > .icon {
+      font-size: 22px;
+      line-height: 28px;
+      margin-right: 0;
+      top: -1px;
+      float: left;
+    }
+
+    &:hover {
+      color: color('white');
+    }
+  }
+
+  > span {
+    color: color('gray');
+  }
+
+
+}

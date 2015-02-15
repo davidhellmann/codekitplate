@@ -1,0 +1,157 @@
+/* ==========================================================================
+
+   siteFooter
+
+   ========================================================================== */
+
+.siteFooter {
+  background: color('white');
+  border-top: border('solid--xdarkgray10');
+  margin-top: 20px;
+  box-shadow: boxshadow('secondLevel');
+
+  &__footerNavContainer {
+    padding: 20px 0 0 0;
+    @include col(3);
+
+    @include breakpoint('default') {
+      @include col(6);
+
+      &:nth-child(3) {
+        clear: both;
+      }
+    }
+
+    @include breakpoint('small') {
+      @include col(12);
+    }
+
+    h3 {
+      color: color('lightdarkgray');
+      font-family: font('hilti--headline');
+      font-size: fontSize('base');
+      margin: 0 0 10px 0;
+    }
+
+    > ul {
+      margin: 0 0 20px 0;
+
+      a {
+        color: color('lightdarkgray');
+        text-decoration: none;
+
+        &:hover {
+          color: color('xdarkgray');
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // About Hilti
+  &__aboutHilti {
+    padding: 20px 0 0 0;
+    @include col(3);
+
+    @include breakpoint('default') {
+      @include col(6);
+    }
+
+    @include breakpoint('small') {
+      @include col(12);
+    }
+
+    h3 {
+      color: color('red');
+      font-family: font('hilti--headline');
+      font-size: fontSize('base');
+      margin: 0 0 10px 0;
+    }
+  }
+
+  //  Meta Navi
+  &__metaNavi {
+    @include col(9);
+    clear: both;
+
+    @include breakpoint('default') {
+      @include col(12);
+    }
+
+    ul {
+      border-top: border('dotted--xdarkgray');
+      padding-top: 20px;
+      margin-bottom: 20px;
+      @include clearfix;
+
+      a {
+        color: color('lightdarkgray');
+        text-decoration: none;
+
+        &:hover {
+          color: color('xdarkgray');
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__siteEnd {
+    @include col(12, no);
+    background: color('red');
+    color: color('white');
+  }
+
+  &__slogan {
+    padding: 20px;
+    @include col(9);
+    height: 160px;
+
+    h2 {
+      font-family: font('hilti--headline');
+      word-wrap: normal;
+      hyphens: none;
+    }
+  }
+
+  &__topBox {
+    padding: 20px;
+    @include col(3);
+    background: color('black');
+    height: 160px;
+  }
+
+  &__scrollTop {
+    @include col(1, no, yes);
+    float: right;
+    text-align: center;
+    color: color('gray');
+    cursor: pointer;
+
+
+    .icon {
+      float: left;
+      width: 100%;
+      font-size: fontSize('large');
+      position: relative;
+      top: 0;
+      transition: all ms('medium');
+    }
+
+    &:hover .icon {
+      top: -10px;
+      color: color('white');
+    }
+
+    > span {
+      float: left;
+      width: 100%;
+      margin: -5px 0 0 0;
+      transition: all ms('medium');
+    }
+
+    &:hover span {
+      color: color('white');
+    }
+  }
+}

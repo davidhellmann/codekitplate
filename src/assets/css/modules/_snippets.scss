@@ -1,0 +1,500 @@
+/* ==========================================================================
+
+   Snippets
+
+   ========================================================================== */
+
+
+/* ==========================================================================
+
+   Buttons
+
+   ========================================================================== */
+
+.button {
+  -webkit-appearance: none;
+  padding: 10px;
+  outline: 0;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  background: color('red');
+  position: relative;
+  color: color('white');
+  border-radius: 3px;
+  font-size: fontSize('base');
+  font-family: font('hilti');
+  font-weight: 700;
+  overflow: hidden;
+  transition: all ms('medium');
+
+  > .icon--left {
+    float: left;
+    margin-right: 10px;
+  }
+
+  > .icon--right {
+    float: right;
+    margin-left: 10px;
+  }
+
+  &:hover {
+    background: darken(color('red'), 5%);
+    color: color('white');
+  }
+
+  &--darkgray {
+    background: lighten(color('darkgray'),20%);
+
+    &:hover {
+      background: lighten(color('darkgray'),15%);
+    }
+  }
+
+  &--lightdarkgray {
+    background: lighten(color('lightdarkgray'),20%);
+
+    &:hover {
+      background: lighten(color('lightdarkgray'),15%);
+    }
+  }
+
+  &--big {
+    font-size: fontSize('medium');
+    font-family: font('hilti--headline');
+    padding: 20px;
+  }
+
+  &--disabled,
+  &--disabled:hover {
+    background: color('xlightgray');
+    color: darken(color('lightgray'), 5%);
+    cursor: default;
+    cursor: not-allowed;
+  }
+
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+}
+
+.noStyle {
+  border: none;
+  padding: 0;
+  outline: none;
+  background: transparent;
+}
+
+
+/* ==========================================================================
+
+   Textformatierung
+
+   ========================================================================== */
+
+strong {
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+.bullet {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 13px;
+  font-weight: 700;
+  text-decoration: underline;
+
+  &:before {
+    width: 8px;
+    height: 8px;
+    background: color('xdarkgray');
+    position: absolute;
+    content: " ";
+    left: 0;
+    top: 5px;
+  }
+}
+
+
+
+/* ==========================================================================
+
+   Lists
+
+   ========================================================================== */
+
+
+ul {
+  > li {
+    margin: 0 0 10px 0;
+  }
+
+  &.twoCols {
+
+    > li {
+      float: left;
+      width: 50%;
+
+      @include breakpoint('small') {
+        width: 100%;
+      }
+
+      &:nth-child(2n+1) {
+        clear: both;
+      }
+    }
+
+    &--1_3 {
+
+      > li {
+        width: 66.66666666%;
+
+        @include breakpoint('small') {
+          width: 100%;
+        }
+
+        &:nth-child(2n+1) {
+          width: 33.33333333%;
+
+          @include breakpoint('small') {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// List with bullets
+.list {
+
+  li {
+    padding: 0 0 0 10px;
+    margin: 0 0 10px 0;
+    position: relative;
+
+    &:before {
+      width: 5px;
+      height: 5px;
+      background: color('lightdarkgray');
+      position: absolute;
+      content: " ";
+      left: 0;
+      top: 6px;
+    }
+  }
+
+  &--left {
+
+    li {
+      float: left;
+      margin: 0 20px 5px 0;
+    }
+  }
+
+  &--right {
+
+    li {
+      float: right;
+      margin: 0 0 5px 20px;
+    }
+  }
+
+  &--bigBullets {
+    &:before {
+      width: 8px;
+      height: 8px;
+      background: color('xdarkgray');
+      position: absolute;
+      content: " ";
+      left: 0;
+      top: 5px;
+    }
+  }
+
+  &--darkBullets {
+
+    li {
+
+      &:before {
+        background: color('xdarkgray');
+      }
+    }
+  }
+
+  &--whiteBullets {
+    li {
+
+      &:before {
+        background: color('white');
+      }
+    }
+  }
+}
+
+
+
+
+/* ==========================================================================
+
+   Headlines
+
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6  {
+  width: 100%;
+  display: inline-block;
+  font-family: font('hilti--extended');
+  line-height: 1.1;
+  word-wrap: break-word;
+  hyphens: auto;
+
+  &.headline {
+    font-family: font('hilti--headline');
+  }
+
+  &.underline {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: border('dotted--xdarkgray');
+  }
+
+
+
+  &.marginTopBottom {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+h1 {
+  font-size: fontSize('xlarge');
+}
+
+h2 {
+  font-size: fontSize('large');
+}
+
+h3 {
+  font-size: fontSize('medium');
+
+  &.underline {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    &--big {
+      @extend .underline;
+      margin-bottom: 20px;
+    }
+
+    &--small {
+      @extend .underline;
+      margin-bottom: 5px;
+    }
+  }
+
+  &.marginTopBottom {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+h4,
+h5,
+h6 {
+  font-family: font('hilti');
+  font-size: fontSize('base');
+  font-weight: 700;
+
+  &.underline {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  &.marginTopBottom {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &.marginBottom {
+    margin-bottom: 10px;
+  }
+}
+
+/* ==========================================================================
+
+   Videos
+
+   ========================================================================== */
+
+.videoBox {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ==========================================================================
+
+   Images
+
+   ========================================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+/* ==========================================================================
+
+   Sections
+
+   ========================================================================== */
+
+.section {
+  @include col(12, no);
+
+  &--hasPadding {
+    @include col(12);
+  }
+
+  &--white {
+    padding: 20px;
+    @include col(12);
+    background: color('white');
+    box-shadow: boxshadow('secondLevel');
+  }
+
+  .pageTitle {
+    @include col(12, no);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: border('dotted--xdarkgray');
+
+    > :first-child {
+      margin-top: 35px;
+      margin-bottom: 5px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-size: fontSize('large');
+    }
+
+    h1 {
+      font-family: font('hilti--headline');
+    }
+
+    .pageTitle__hgroup {
+      float: left;
+      display: inline-block;
+      margin-top: 35px;
+      max-width: 80%;
+
+      @include breakpoint('medium') {
+        max-width: none;
+      }
+
+      &.hasButton {
+        border-left: border('dotted--xdarkgray');
+        padding-left: 20px;
+
+        @include breakpoint('medium') {
+          padding: 0;
+          margin-top: 10px;
+          border: none;
+          clear: both;
+        }
+      }
+    }
+
+    .backButton {
+      float: left;
+      height: 100%;
+      max-width: 20%;
+      position: relative;
+      margin: 55px 0 0 0;
+      padding: 0 20px;
+      color: color('xdarkgray');
+      font-weight: 700;
+
+      @include breakpoint('medium') {
+        margin: 35px 0 0 0;
+        max-width: none;
+      }
+
+      .icon {
+        font-size: fontSize('medium');
+        position: absolute;
+        left: 0;
+        top: -2px;
+      }
+
+      span {
+        border-bottom: border('solid--trans');
+        transition: all ms('medium');
+      }
+
+      &:hover {
+        span {
+          border-bottom: border('solid--xdarkgray');
+        }
+      }
+    }
+
+    &--single {
+      h1 {
+        font-size: fontSize('xlarge');
+        max-width: 80%;
+
+        @include breakpoint('medium') {
+          max-width: none;
+        }
+      }
+    }
+
+    &--noTopMargin {
+      .pageTitle__hgroup {
+        margin-top: 0;
+      }
+
+      .backButton {
+        margin: 20px 0 0 0;
+
+        @include breakpoint('medium') {
+          margin: 0;
+        }
+      }
+    }
+
+    &--noBorder {
+      border-bottom: none;
+      padding: 10px 0 20px 0;
+    }
+  }
+}

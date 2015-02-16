@@ -33,9 +33,6 @@ textarea {
   box-shadow: boxshadow('inputs');
   background: darken(color('white'), 5%);
   transition: background ms('medium');
-  @include input-placeholder {
-    color: color('gray');
-  }
 
   &:focus {
     background: color('white');

@@ -1,0 +1,31 @@
+{
+  "name": "conformity",
+  "version": "0.2.3",
+  "main": [
+    "dist/conformity.js",
+    "dist/conformity.min.js"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8.0"
+  },
+  "ignore": [
+    "node_modules/",
+    "grunt",
+    ".gitignore",
+    "bower.json",
+    "/conformity.js",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/codekipple/conformity",
+  "_release": "0.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.3",
+    "commit": "3e0539a4cc99cc14fe8f960868535bbcccd7bb0b"
+  },
+  "_source": "git://github.com/codekipple/conformity.git",
+  "_target": "~0.2.3",
+  "_originalSource": "conformity",
+  "_direct": true
+}

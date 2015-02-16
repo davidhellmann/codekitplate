@@ -79,18 +79,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-
-
-
-
-
-
-// Jira Ticketing
-jQuery.ajax({
-  url: "https://jira.fork.de/s/d41d8cd98f00b204e9800998ecf8427e/en_UK-5tuaiv-1988229788/6155/68/1.4.0-m6/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?collectorId=116cd410",
-  type: "get",
-  cache: true,
-  dataType: "script"
-});
